@@ -1,0 +1,31 @@
+{{#extends "base"}}
+
+{{#block "content"}}
+<form method="POST">
+    <div>
+        <label>Food Name:</label>
+        <input type="text" name="foodName" class="form-control" value="{{foodRecord.foodName}}"/>
+    </div>
+    <div>
+        <label>Calories:</label>
+        <input type="text" name="calories" class="form-control" value="{{foodRecord.calories}}"/>
+    </div>
+    <div>
+        <label>Meal:</label>
+        <input type="radio" name="meal" value="breakfast" checked/><label>Breakfast</label>
+        <input type="radio" name="meal" value="lunch"/><label>Lunch</label>
+        <input type="radio" name="meal" value="dinner"/><label>Dinner</label>
+    </div>
+   
+    <div>
+        <input name="tags" type="checkbox" value="organic"/><label>Organic</label>
+        <input name="tags" type="checkbox" value="less-oil"/><label>Less Oil</label>
+        <input name="tags" type="checkbox" value="home-cooked"/><label>Homecooked</label>
+        <input name="tags" type="checkbox" value="gluten-free"/><label>Gluten Free</label>
+    </div>
+     <input type="submit" class="btn btn-primary mt-3"/>
+</form>
+
+{{/block}}
+
+{{/extends}}
