@@ -45,6 +45,20 @@ app.post("/add-food", function(req,res){
         foodName,
         calories
     })
+});
+
+// One route to send the form HTML back to the client
+app.get("/bmi", function(req,res){
+    res.render("bmi");
+})
+
+app.post("/bmi", function(req,res){
+    const weight = Number(req.body.weight);
+    const height = Number(req.body.height);
+    const bmi = weight / (height/100) ** 2;
+    res.render('bmi-result',{
+        bmi: bmi
+    })
 })
 
 
