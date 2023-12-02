@@ -1,0 +1,34 @@
+{{#extends "base"}}
+
+{{#block "content"}}
+<h1>Welcome to Pasta Delight</h1>
+<p>Serving you Pasta the Way Rome intended</p>
+
+{{#if promotion}}
+<div class="alert alert-success">
+    PROMOTION! 10% discount off all items!
+</div>
+{{else}}
+<div class="alert alert-danger">
+    No promotion today
+</div>
+{{/if}}
+
+{{#ifEquals special "Banana Pie"}}
+ <p>Today's special dessert is Banana Pie!</p>
+{{else}}
+ <p>Today has no special</p>
+{{/ifEquals}}
+
+
+<ul class="list-group">
+    {{#each foodMenu }}
+    <li class="list-group-item">{{this}}</li>
+    {{/each}}
+
+</ul>
+
+<img src="pasta.jpg"/>
+{{/block}}
+
+{{/extends}}
