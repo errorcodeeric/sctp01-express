@@ -37,13 +37,24 @@ app.get("/add-food", function(req,res){
 
 app.post("/add-food", function(req,res){
 
+    console.log(req.body);
+
     // use the destructuring syntax to extract
     // many keys from an object at one go
-    const {foodName, calories} = req.body;
+    const {foodName, calories, meal, cuisine} = req.body;
+
+    // it is possible for NO radio button to selected
+    // so we have to check if there is one selected
+    if (!meal) {
+        res.send("No meal seleced");
+        return;
+    } 
 
     res.render("food-summary", {
         foodName,
-        calories
+        calories,
+        meal,
+        cuisine
     })
 });
 

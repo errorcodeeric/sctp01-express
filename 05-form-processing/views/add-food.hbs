@@ -10,6 +10,20 @@
         <label>Calories:</label>
         <input type="text" name="calories" class="form-control"/>
     </div>
+    <div>
+        <label>Meal:</label>
+        <input type="radio" name="meal" value="breakfast" checked/><label>Breakfast</label>
+        <input type="radio" name="meal" value="lunch"/><label>Lunch</label>
+        <input type="radio" name="meal" value="dinner"/><label>Dinner</label>
+    </div>
+    <div>
+        <label>Cuisine</label>
+        <select class="form-control" name="cuisine">
+            <option value="chinese">Chinese</option>
+            <option value="western">Western</option>
+            <option value="japanese">Japanese</option>
+        </select>
+    </div>
      <input type="submit" class="btn btn-primary mt-3"/>
 </form>
 
