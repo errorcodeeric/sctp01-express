@@ -1,0 +1,43 @@
+{{#extends "base"}}
+
+{{#block "content"}}
+<h1>Editing {{postingToEdit.title}}</h1>
+<form method="POST">
+    <div>
+        <label>Title</label>
+        <input type="text" name="title" class="form-control" value="{{postingToEdit.title}}"/>
+    </div>
+    <div>
+        <label>Price</label>
+        <input type="number" name="price" class="form-control" value="{{postingToEdit.price}}"/>
+    </div>
+    <div>
+        <label>Payment Types</label>
+        <input type="checkbox" name="payment-types" value="cod"
+            {{#inArray postingToEdit.payments "cod"}}checked{{/inArray}}
+        /><label>Cash On Demand</label>
+        <input type="checkbox" name="payment-types" value="cc"
+            {{#inArray postingToEdit.payments "cc"}}checked{{/inArray}}
+        /><label>Credit Card</label>
+        <input type="checkbox" name="payment-types" value="paynow"
+            {{#inArray postingToEdit.payments "paynow"}}checked{{/inArray}}
+        /><label>PayNow</label>
+    </div>
+    <div>
+        <label>Product Type</label>
+        <input type="radio" name="type" value="entertainment"
+            {{#eq postingToEdit.type "entertainment"}}checked{{/eq}}
+        /><label>Entertainment</label>
+        <input type="radio" name="type" value="clothings"
+            {{#eq postingToEdit.type "clothings"}}checked{{/eq}}
+        
+        /><label>Clothings</label>
+        <input type="radio" name="type" value="electronic"
+            {{#eq postingToEdit.type "electronic"}}checked{{/eq}}
+        /><label>Electronic</label>
+    </div>
+    <input type="submit" class="btn btn-primary mt-3"/>
+</form>
+{{/block}}
+
+{{/extends}}

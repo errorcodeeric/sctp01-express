@@ -10,6 +10,7 @@
             <th>Price</th>
             <th>Payment Types</th>
             <th>Type</th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
@@ -23,7 +24,11 @@
                 {{/each}}
     
             </td>
-            <td>entertainment</td>
+            <td>{{this.type}}</td>
+            <td>
+                <a href="/delete-posting/{{this.id}}" class="btn btn-danger sm">Delete</a>
+                <a href="/edit-posting/{{this.id}}" class="btn btn-primary sm">Edit</a>
+            </td>
         </tr>
         {{/each}}
     </tbody>

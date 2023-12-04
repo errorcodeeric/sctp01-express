@@ -1,0 +1,13 @@
+{{#extends "base"}}
+
+{{#block "content"}}
+<form method="POST">
+   
+    <div class="alert alert-danger">
+         <h1>Are you sure you want to delete {{wantedPosting.title}}?</h1>
+        <input type="submit" value="OK" class="btn btn-danger"/>
+        <a href="/" class="btn btn-success">Cancel</a>
+    </div>
+</form>
+{{/block}}
+{{/extends}}
