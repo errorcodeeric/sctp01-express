@@ -1,0 +1,36 @@
+{{#extends "base"}}
+
+{{#block "content"}}
+<h1>All Postings</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Price</th>
+            <th>Payment Types</th>
+            <th>Type</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each postings}}
+        <tr>
+            <td>{{this.title}}</td>
+            <td>{{this.price}}</td>
+            <td>
+                {{#each this.payments}}
+                <span class="badge bg-primary">{{this}}</span> 
+                {{/each}}
+    
+            </td>
+            <td>entertainment</td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+
+
+
+{{/block}}
+
+{{/extends}}
