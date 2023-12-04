@@ -10,6 +10,10 @@ const app = express();
 // tell Express that we are using hbs
 app.set('view engine', 'hbs');
 
+app.use(express.urlencoded({
+    "extended": false
+}))
+
 // 1c setup wax-on
 wax.on(hbs.handlebars);
 
@@ -54,6 +58,36 @@ app.get('/', function(req,res){
         "postings": postings
     });
 })
+
+// One route to display the create form
+app.get('/add-posting', function(req,res){
+    res.render("add-posting");
+})
+
+
+app.post("/add-posting", function(req,res){
+
+    let payments = req.body["payment-types"];
+    if (payments) {
+        payments = Array.isArray(payments) ? payments : [payments];
+    } else {
+        payments =[];
+    }
+
+    const newPosting = {
+        title: req.body.title,
+        price: req.body.price,
+        payments:payments,
+        type: req.body.type
+    }
+
+
+
+    postings.push(newPosting);
+    res.redirect("/");
+})
+
+// One route to process the submission of the create form
 
 // 3. START SERVER (No routers after you've started server)
 app.listen(3000, function(){

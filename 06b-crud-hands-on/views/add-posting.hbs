@@ -1,0 +1,29 @@
+{{#extends "base"}}
+
+{{#block "content"}}
+<form method="POST">
+    <div>
+        <label>Title</label>
+        <input type="text" name="title" class="form-control"/>
+    </div>
+    <div>
+        <label>Price</label>
+        <input type="number" name="price" class="form-control"/>
+    </div>
+    <div>
+        <label>Payment Types</label>
+        <input type="checkbox" name="payment-types" value="cod"/><label>Cash On Demand</label>
+        <input type="checkbox" name="payment-types" value="cc"/><label>Credit Card</label>
+        <input type="checkbox" name="payment-types" value="paynow"/><label>PayNow</label>
+    </div>
+    <div>
+        <label>Product Type</label>
+        <input type="radio" name="type" value="entertainment"/><label>Entertainment</label>
+        <input type="radio" name="type" value="clothings"/><label>Clothings</label>
+        <input type="radio" name="type" value="electronic"/><label>Electronic</label>
+    </div>
+    <input type="submit" class="btn btn-primary mt-3"/>
+</form>
+{{/block}}
+
+{{/extends}}
