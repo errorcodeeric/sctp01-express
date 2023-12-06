@@ -62,6 +62,7 @@ app.post("/postings", function(req,res){
     }
 
     postings.push(newPosting);
+    res.status(201);
     res.json({
         "message": "New posting added"
     })
@@ -77,11 +78,16 @@ app.delete("/postings/:postingId", function(req,res){
     if (indexToDelete != -1) {
         // splice will modify the original array
         postings.splice(indexToDelete, 1);
+        res.json({
+            "success":"The posting has been deleted"
+        })
     } else {
-        console.log("indexToDelete not found");
+        res.status(404); // tell the client that the posting is not found
+        res.json({
+            "error":"The given postingId does not exists"
+        })
     }
 
-    res.redirect("/");
 })
 
 
