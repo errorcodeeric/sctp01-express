@@ -2,8 +2,9 @@
 const express = require('express');
 const cors = require('cors');
 const axios = require('axios');
+require('dotenv').config();
 
-const BIN_ID = "657067e454105e766fda685c";
+const BIN_ID = process.env.BIN_ID; // get the BIN_ID from the .env file
 const BASE_JSON_BIN_URL="https://api.jsonbin.io/v3/b";
 
 // 1a. create the app
